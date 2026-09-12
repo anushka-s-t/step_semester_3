@@ -1,0 +1,19 @@
+public class PerformanceTracker {
+    static String findMinMaxSpread(int[] scores) {
+        int min = scores[0];
+        int max = scores[0];
+
+        // Track both min and max within a single loop execution
+        for (int i = 1; i < scores.length; i++) {
+            if (scores[i] < min) {
+                min = scores[i];
+            }
+            if (scores[i] > max) {
+                max = scores[i];
+            }
+        }
+
+        int spread = max - min;
+        return "Min: " + min + " | Max: " + max + " | Spread: " + spread;
+    }
+}
